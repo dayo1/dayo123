@@ -39,7 +39,7 @@ time = os.stat("text3.txt").st_mtime
 print(datetime.fromtimestamp(time))
 
 import os
-os.mkdir("pract1")
+os.mkdir("pract2")
 
-os.chdir("pract1")
+os.chdir("pract2")
 print(os.getcwd())
