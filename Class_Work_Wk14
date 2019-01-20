@@ -1,0 +1,61 @@
+"""
+import requests
+import csv
+
+url = 'http://climatedataapi.worldbank.org/climateweb/rest/v1/country/cru/tas/year/USA.csv'
+response = requests.get(url)
+if response.status_code != 200:
+    print('Failed to get data:', response.status_code)
+else:
+    ourdata = csv.reader(response.text.strip().split('\n'))
+    results = []
+    for record in ourdata:
+        if record[0] != 'year':
+            year = int(record[0])
+            value = round(float(record[1]), 3)
+            print(year, value)
+
+"""
+
+"""
+import csv
+with open('Long_service.csv', "r")as a:
+    csv_f = csv.reader(a)
+    Longer = []
+
+    for row in csv_f:
+        name = row[0]+ " " + row[1]
+        Longer.append(name)
+
+with open('new_list.csv', "r") as b:
+    csv_f = csv.reader(b)
+    newstaff = []
+
+    for row in csv_f:
+        name = row[0] + " " + row[1]
+        newstaff.append(name)
+
+Longer = set(Longer)
+newstaff = set(newstaff)
+
+very_new = Longer.difference(newstaff)
+for name in very_new:
+    print (name)
+
+"""
+
+"""
+import os
+print (dir(os))
+print (os.getcwd())
+
+"""
+
+"""
+import os
+print(os.listdir())
+
+"""
+
+
+
