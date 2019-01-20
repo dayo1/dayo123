@@ -38,3 +38,8 @@ print(os.stat("text3.txt"))
 time = os.stat("text3.txt").st_mtime
 print(datetime.fromtimestamp(time))
 
+import os
+os.mkdir("pract1")
+
+os.chdir("pract1")
+print(os.getcwd())
